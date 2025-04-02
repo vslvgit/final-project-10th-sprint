@@ -8,15 +8,11 @@
 #   dir3
 #       dir4
 
-mkdir task
-cd task
-mkdir dir1 dir2 dir3
-cd dir3
-mkdir dir4
+mkdir -p task/dir1 task/dir2 task/dir3/dir4
 
 # изменяем текущую директорию на task
 
-cd ../task
+cd task
 
 # создаём пустой файл task/dir2/empty
 
@@ -36,7 +32,7 @@ chmod 764 dir2/hello.sh
 
 # сохраняем список файлов task/dir2 в task/dir2/list.txt
 
-ls dir2 > task/dir2/list.txt
+ls -A dir2 > dir2/list.txt
 
 # копируем содержимое каталога task/dir2 в каталог task/dir3/dir4
 
@@ -62,7 +58,7 @@ bash dir2/hello.sh "$NAME" >> dir1/summary.txt
 
 # перемещаем с переименованием task/dir1/summary.txt в task/Практическое задание
 
-mv dir1/summary.txt task/'Практическое задание'
+mv dir1/summary.txt 'Практическое задание'
 
 # выводим на консоль содержимое файла task/Практическое задание
 
